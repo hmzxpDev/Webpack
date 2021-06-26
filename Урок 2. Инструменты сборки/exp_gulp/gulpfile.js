@@ -1,15 +1,24 @@
 const { src, dest, watch } = require('gulp');
-const sass = require('gulp-sass'); // 1
+const sass = require('gulp-sass');
 
-function build() { // 2
-    return src('src/main.scss') // 3
-        .pipe(sass()) // 4
+exports.default = async function () {
+    console.log("Hello from my first task");
+}
+
+exports.copy = function () {   
+    return src('src/*.scss')   
+        .pipe(dest('output')); 
+}
+
+function build() { 
+    return src('src/main.scss') 
+        .pipe(sass()) 
         .pipe(dest('output'));
 }
 
-exports.build = build; // 5
+exports.build = build; 
 
 
-exports["build:watch"] = function () { // 2
+exports["build:watch"] = function () { 
     return watch('src/*.scss', build);
-} // 3
+} 
