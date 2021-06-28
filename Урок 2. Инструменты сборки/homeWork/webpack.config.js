@@ -15,7 +15,8 @@ module.exports = {
     // точка выхода
     output: {
         // название файла, который мы получил после сборки проекта
-        filename: 'main.bundle.js'
+        filename: 'main.bundle.js',
+        path: __dirname + '/build',
     },
     // для отладки подключил source-map
     devtool: "source-map",
