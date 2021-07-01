@@ -23,8 +23,4 @@ import { timerCreate } from './timer/timerCreature.js'
 timerCreate();
 
 import './main.scss';
-import mp3 from './timer/sounds/timerSound.mp3'
 
-const sound = document.createElement('audio');
-sound.src = mp3;
-document.body.appendChild(sound);

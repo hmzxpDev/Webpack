@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = {
+module.exports = {  
     // устанавливаем мод
     mode: 'development',
     /**
@@ -15,7 +16,8 @@ module.exports = {
     // точка выхода
     output: {
         // название файла, который мы получил после сборки проекта
-        filename: 'main.bundle.js'
+        filename: 'main.bundle.js',
+        path: __dirname + '/build',
     },
     // для отладки подключил source-map
     devtool: "source-map",
@@ -31,11 +33,19 @@ module.exports = {
                  */
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
-            {
+            {   // file-loader
                 test: /\.mp3$/,
                 use: ['file-loader']
-            }
+            },
+            {   // babel
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
         ],
+    },
+     optimization: {
+        usedExports: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -43,6 +53,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'main.bundel.css'
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 }

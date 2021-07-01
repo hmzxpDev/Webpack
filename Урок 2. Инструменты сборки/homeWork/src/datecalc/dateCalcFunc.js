@@ -4,7 +4,7 @@
  * 1. импортируем бибилиотеку luxon для определения интервала дат
  * 2. создаем функцию diffDates которая будет расчитывать разницу в датах
  */
-import { DateTime } from 'luxon';
+const { DateTime }  = require('luxon');
 
 export function diffDates(firstDate, secondDate) {
     firstDate = DateTime.fromISO(firstDate);
