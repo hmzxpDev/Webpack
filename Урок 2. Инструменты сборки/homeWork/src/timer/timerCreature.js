@@ -5,7 +5,7 @@
  */
 import { timerComp } from "./timerTemplate.js";
 
-import { Howl } from "howler";
+import { Howl } from "howler/dist/howler.min.js";
 
 /**
  * Импортируем функции таймера

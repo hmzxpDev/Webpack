@@ -3,9 +3,9 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = {  
+module.exports = {
     // устанавливаем мод
-    mode: 'development',
+    mode: 'production',
     /**
      * 1. устанавливаем точку входа через path.resolve
      * __dirname означает папку, где мы находимся в данный момент
@@ -44,7 +44,7 @@ module.exports = {
             },
         ],
     },
-     optimization: {
+    optimization: {
         usedExports: true,
     },
     plugins: [
@@ -54,6 +54,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.bundel.css'
         }),
-        new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ]
 }
