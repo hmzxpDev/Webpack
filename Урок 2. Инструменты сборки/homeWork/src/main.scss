@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+}
+.dateCalcButton{
+    width: 50%;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+.timerCalcButton{
+    width: 50%;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+.timerParent{
+    display:flex;
+    margin-top:30px;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+}
+
+
+.timerBlock{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.timerBlock input{
+    width: 40px;
+}
+.timeLeft{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+}
+.timeLeft div{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dateCalc{
+    display: none;
+}
+.timer{
+    display: none;
+}
